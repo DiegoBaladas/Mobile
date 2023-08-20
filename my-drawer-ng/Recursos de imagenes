@@ -1,0 +1,41 @@
+/*En esta lección hablaremos acerca de los recursos de imágenes, cómo manejarnos con ellos respecto al "source" en los "tags" imágenes. 
+Es decir, el atributo "src", origen de la imagen donde está el "asset", el recurso para ser cargado en nuestra aplicación. Tenemos varias opciones, tres, en particular. 
+Lo bueno es que estas tres opciones sirven tanto para el HTML, el CSS o cuando lo hacemos programáticamente. Es decir, si nosotros tenemos una "background image" de CCS, 
+sirve estos tres modos que vamos a ver. Si tenemos un "tag" del XML de NativeScript de imágenes, sirve esto que vamos a ver, y si estamos asignándole, 
+cambiándole el "image source" a una imagen por TypeScript, también sirve lo que vamos a dar como tres opciones.*/
+
+
+
+
+/* #1.  La primera opción es por URL, uno hace un "source" con una URL pública y lo va a ver, una URL de una aplicación que sirva sólo en la LAN también se puede 
+hacer con la dirección de un servidor puntual de una LAN donde uno está trabajando. Si no, como en este caso que estamos viendo, sería una URL 100 por ciento pública. */
+src = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png";
+
+
+
+/* #2. Una segunda opción es cuando usamos un "path" de aplicación con este símbolo, como lleva la letra "ñ". Este símbolo. Este archivo, en este caso, 
+va a ser buscado bajo la carpeta "app/imagenes/logo.png". Está dentro del "path" de nuestra aplicación */
+src = "~/imagenes/logo.png" /*=> app/imagenes/logo.png   */
+
+
+
+/* #3. 
+y la tercera opción es dentro de nuestro repositorio "buscar", pero en la carpeta específica de recursos del sistema. Esta es una buena práctica, en general, porque
+ nos permite dar distintos tipos de imágenes con distintas características, más que nada por la resolución y la calidad de las pantallas, en cada caso, para cada 
+ sitio operativo, Android y iOS. Esto, lo busca dentro del "app_resources", tenemos Android y la carpeta iOS. Entonces, de esta manera, ya elige la plataforma 
+ dinámicamente que corresponda y, a su vez, dentro de esto, tenemos la calidad, la profundidad de imagen, "dots per inch", los puntos por pulgada de la imagen. 
+ Por ejemplo, en el caso de Android, está en "android", "source", "main", "res", tenemos distintas carpetas. Por ejemplo, en este caso tenemos "mdpi", es las imágenes 
+ de "medium dpi". O sea, un nivel medio de puntos por pulgada. "Hdpi" es "high", alto, alta densidad de puntos por pulgada. "Xh", por ejemplo, es extra alta calidad. 
+ Como ven, hay extra extra alta y extra extra extra alta. Este es el caso de Android. En el caso de iOS tenemos, por ejemplo, "menu", menú por 2X y por 3X. 
+ El caso de menú que no tiene ninguna X, pondríamos que puede ser por una X es, por ejemplo, para la primera generación, iPad 2 y iPad Mini. 
+ Para la 2X es lo que se conoce como retina: iPhone 6, iPad, por ejemplo, IPhone XR. Y luego tenemos la tercer generación, digamos que son iPhone 6 Plus, iPhone X, en general.
+De esta manera, tenemos distinta calidad de imagen.
+ */
+src = "res://logo"
+
+
+/*Esto puede ser un poco tedioso para manejar, cuando uno tiene que generar nuevos íconos. Por eso, la comunidad Angular tiene una aplicación web gratis que se conoce 
+como NativeScript Image Builder, nsimage.brosteins.com. Brosteins son los hermanos, los hermanos Stein, que participaron muy activamente del desarrollo de NativeScript 
+ya desde hace años, y tienen esta aplicación gratuita en donde uno puede utilizar para subir su imagen y decir: "bueno, la quiero bajar para tal sistema operativo, Android, 
+iOS" y se lo baja en zip. De esta manera, vemos todos estos conceptos que aplican para todo lo que sea imágenes, puede ser el imagen de "splash", los iconos, imágenes 
+que andan sueltas por nuestra aplicación, etcétera.*/

@@ -1,0 +1,25 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Search" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<GridLayout class="page__content">
+  <Label class="page__content-icon fas" text="&#xf002;"></Label>
+  <GridLayout>
+    <ListView [items]="items" (itemTap)="onItemTap($event)">
+      <ng-template let-item="item">
+        <FlexboxLayout class="list-item">
+          <Image [src]="'C:\Users\diego\Documents\App Mobile\Mobile\my-drawer-ng\src\app\images' + item.image" 
+          class="thumb img-circle"></Image>
+          <Label [text]="item.title" class="list-group-item-heading"
+          style="width: 60%;"></Label>
+        </FlexboxLayout>
+      </ng-template>
+    </ListView>
+  </GridLayout>
+  
+</GridLayout>

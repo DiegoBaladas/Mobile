@@ -1,0 +1,10 @@
+<app-list>
+    <ListView [items]="listItems" (itemTap)="onItemTap($event)">
+    <ng-template let-item="item">
+        <FlexboxLayout flexDirection="row" justifyContent="space-between" alignItems="center" padding="10">
+            <Image [src]="item.imageSource" width="50" height="50"></Image>
+            <Label [text]="item.text" flex-grow="1" margin="10"></Label>
+        </FlexboxLayout>
+    </ng-template>
+</ListView>
+</app-list>

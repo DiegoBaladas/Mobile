@@ -1,0 +1,43 @@
+.page {
+    background-color: #F0F0F0;
+  }
+  
+  .action-bar-title {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Times New Roman", serif;
+    text-transform: uppercase;
+  }
+
+  /* .label-negro {
+    color: rgb(105, 11, 11);
+    font-size: 16px;
+    font-weight: bold;
+  }
+   */
+   
+  .label-subrayado {
+    text-decoration: underline;
+  }
+  
+  .page__content-placeholder {
+    color: #5e1010;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .page__content-icon {
+    color: #FF0000;
+    font-size: 24px;
+  }
+  
+  .page-content {
+    padding: 20px;
+  }
+
+  .image {
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+  }

@@ -1,13 +1,41 @@
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
-    <Label class="action-bar-title" text="Search" colSpan="2"></Label>
-
+    <Label class="action-bar-title" [text]="'KANOHA - AEOO'" colSpan="2"></Label>
     <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
 <GridLayout class="page__content">
   <Label class="page__content-icon fas" text="&#xf002;"></Label>
-  <Label class="page__content-placeholder" text="Probando"></Label>
+  <Label class="page__content-placeholder" text="Pagina de Busqueda...Angel Ordoñez"></Label>
 </GridLayout>
+
+<StackLayout class="page page-content" #layout>
+
+  <!-- ListView -->
+  <label class="page-icon fa" text="&#xf002;"></label>
+
+  <SearchForm (search)="buscarAhora($event)" [incial]="'fut'"></SearchForm>
+  
+  <ListView class="list-group" [items]="this.resultados" (itemTap)="onItemTap($event)" style="height: 1250px;">
+    <ng-template let-x="item">
+      <FlexboxLayout flexDirection="row" class="list-group-item">
+        <Image src="res://motaguaicon" class="thumb img-circle" (longPress)="onLongPress(x)" ></Image>
+        <label [text]="x"  class="list-group-item-heading"
+          verticalAlignment="center" style="width: 60%;"></label>
+      </FlexboxLayout>
+    </ng-template>
+  </ListView>
+
+
+    <!-- <img [src]="imgMilan" alt="Imagen desde Google Drive" style="display: block; margin: 0 auto; max-width: 100%; max-height: 100%;"> -->
+
+  <!-- Para mostrar 2 imagenes en una sola fila -->
+  <GridLayout columns="*, *">
+    <Image [src]="imgBarca" class="image" stretch="aspectFit" row="0" col="0"></Image>
+    <Image [src]="imgMotagua" class="image" stretch="aspectFit" row="0" col="1"></Image> 
+    <!-- <Image [src]="imgMilan"  stretch="aspectFit" row="0" col="1"></Image> -->
+    <!-- <Image [src]="imgUnited" class="image" stretch="aspectFit" row="1" col="1"></Image> -->
+  </GridLayout>
+</StackLayout>
